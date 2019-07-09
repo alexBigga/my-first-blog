@@ -7,6 +7,7 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
+        <!-- step 1: Edit by known user only -->
         {% if user.is_authenticated %}
           <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}

@@ -1,5 +1,35 @@
+# Ein Kommentar:
+# Folgende Regeln gelten in einer .gitignore Datei:
+#
+#    Leere Zeilen oder Zeilen, die mit # beginnen, werden ignoriert.
+#    Standard glob Muster funktionieren.
+#    Du kannst ein Muster mit einem Schraegstrich (/) abschließen, um ein Verzeichnis zu deklarieren.
+#    Du kannst ein Muster negieren, indem Du ein Ausrufezeichen (!) voranstellst.
+#
+# Glob Muster sind vereinfachte regulaere Ausdruecke, die von der Shell verwendet werden:
+# Ein Stern (*) bezeichnet „kein oder mehrere Zeichen“;
+# [abc] bezeichnet eines der in den eckigen Klammern angegebenen Zeichen (in diesem Fall also a oder b oder c);
+# ein Fragezeichen (?) bezeichnet ein beliebiges, einzelnes Zeichen; und
+# eckige Klammern mit Zeichen, die von einem Bindestrich getrennt werden ([0-9])
+# bezeichnen ein Zeichen aus der jeweiligen Menge von Zeichen (in diesem Fall also aus der Menge der # Zeichen von 0 bis 9).
+#
+# ignoriert alle Dateien, die mit .a enden
+*.a
+# nicht aber lib.a Dateien (obwohl obige Zeile *.a ignoriert)
+!lib.a
+# ignoriert eine TODO Datei nur im Wurzelverzeichnis, nicht aber
+/TODO
+# ignoriert alle Dateien im build/ Verzeichnis
+build/
+# ignoriert doc/notes.txt, aber nicht doc/server/arch.txt
+doc/*.txt
+# ignoriert alle .txt Dateien unterhalb des doc/ Verzeichnis
+doc/**/*.txt
+
+
 *.pyc
 *~
+*.[oa]
 __pycache__
 myvenv
 db.sqlite3

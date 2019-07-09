@@ -1,9 +1,12 @@
+<!-- ' Template für die Formular-Variante im blog -->
 {% extends 'blog/base.html' %}
 
 {% block content %}
    <h2>New post</h2>
+    <!-- ' -> csrf-token: Absicherung gegen Cross-Site-Request-Forgery -->
    <form method="POST" class="post-form">{% csrf_token %}
        {{ form.as_p }}
-       <button type="submit" class="save btn btn-default">Save</button>
+       <!-- ' Wir benötigen einen Save-Button. Wir erstellen diesen mit einem HTML-Button: -->
+       <button type="submit" class="save btn btn-default">Merk es dir!</button>
    </form>
 {% endblock %}

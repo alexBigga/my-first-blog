@@ -10,7 +10,9 @@
     <body>
         <div class="page-header">
             <h1><a href="/">Django Girls Blog</a></h1>
+            <!-- Step 1: nur angemeldete user duerfen editieren -->
             {% if user.is_authenticated %}
+            # post_new: Name für die neue view
               <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
         </div>
